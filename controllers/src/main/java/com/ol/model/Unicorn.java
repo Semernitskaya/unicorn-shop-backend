@@ -1,5 +1,7 @@
 package com.ol.model;
 
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 
@@ -8,9 +10,12 @@ import lombok.Data;
  */
 @Data
 @AllArgsConstructor
+@ApiModel(description = "Base unicorn entity")
 public class Unicorn {
 
-    long id;
+    @ApiModelProperty(dataType = "Long", notes = "Unique identifier of unicorn")
+    private Long id;
 
-    String description;
+    @ApiModelProperty(dataType = "String")
+    private String description;
 }
