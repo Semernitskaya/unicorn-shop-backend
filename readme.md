@@ -8,9 +8,11 @@ run maven build
 mvn clean install
 ```
 
-run in docker (docker-image will be created automatically in maven-build)   
+run in docker 
+* docker-image will be created automatically during maven-build)
+* assume that there is MongoDB on default host / port (see MongoConfig class for more info)   
 ```bash
-docker run -P -t spring/unicorn-shop
+docker run --network="host" -P -t spring/unicorn-shop
 ```
 
 run in minikube ([minikube installation](https://kubernetes.io/docs/tasks/tools/install-minikube/))
@@ -48,4 +50,8 @@ curl -X DELETE  "http://localhost:8080/unicorn-shop/unicorn?id=3"
    
 ### REST-API description
 
-see [swagger-ui](http://localhost:8080/swagger-ui.html)
+see [swagger-ui](http://localhost:8080/swagger-ui.html)   
+
+### Travis CI build   
+
+see [travis-ci](https://travis-ci.org/Semernitskaya/unicorn-shop-backend)
